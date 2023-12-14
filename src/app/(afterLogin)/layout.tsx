@@ -2,16 +2,22 @@
 
 import { ReactNode } from "react";
 
+import LeftMenuNav from "./_components/sideNavs/LeftMenuNav";
+
+import styles from "./layout.module.css";
+
 type Props = {
   children: ReactNode;
-  modal?: ReactNode;
 };
 
-export default function afterLoginLayout({ children, modal }: Props) {
+export default function afterLoginLayout({ children }: Props) {
   return (
-    <>
-      {children}
-      {modal && modal}
-    </>
+    <div className={styles.container}>
+      <LeftMenuNav />
+
+      <div>{children}</div>
+
+      <div></div>
+    </div>
   );
 }

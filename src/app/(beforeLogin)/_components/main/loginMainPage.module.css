@@ -51,8 +51,7 @@
 }
 
 .signup_button:hover {
-  background-color: #487be1;
-  cursor: pointer;
+  background-color: rgba(29, 155, 240, 0.9);
 }
 
 .bold {
@@ -79,7 +78,6 @@
 
 .login_button:hover {
   background-color: #f6f6f6;
-  cursor: pointer;
 }
 
 .button_infomation {

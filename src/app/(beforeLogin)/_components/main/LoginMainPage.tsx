@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "./loginMainPage.module.css";
+import styles from "./LoginMainPage.module.css";
 
 import logo from "../../../../../public/buzzy.png";
 
