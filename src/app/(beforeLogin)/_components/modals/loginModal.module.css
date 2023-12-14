@@ -1,0 +1,13 @@
+.modal_wrapper {
+  max-width: 600px;
+  height: fit-content;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.close_button {
+  font-weight: 400;
+  font-size: 24px;
+  cursor: pointer;
+}

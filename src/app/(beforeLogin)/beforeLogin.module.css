@@ -1,0 +1,108 @@
+.main_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.main_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo_section {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.account_section {
+  flex: 1;
+}
+
+.account_section_title {
+  margin: 48px 0px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -1.2px;
+}
+
+.account_section_description {
+  margin-bottom: 32px;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -1.2px;
+}
+
+.signup_button {
+  width: 300px;
+  padding: 12px 0px;
+  margin-bottom: 12px;
+  border-radius: 50px;
+  border: unset;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(29, 155, 240);
+  cursor: pointer;
+}
+
+.signup_button:hover {
+  background-color: #487be1;
+  cursor: pointer;
+}
+
+.bold {
+  color: rgb(29, 155, 240);
+}
+
+.signup_button_infomation {
+  margin-bottom: 32px;
+  font-size: 11px;
+  color: rgb(83, 100, 113);
+}
+
+.login_button {
+  width: 300px;
+  padding: 12px 0px;
+  border-radius: 50px;
+  border: 1px solid rgb(207, 217, 222);
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(29, 155, 240);
+  background-color: white;
+  cursor: pointer;
+}
+
+.login_button:hover {
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+
+.button_infomation {
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: -1.2px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100dvw;
+  padding: 16px 0px;
+  background-color: transparent;
+}
+
+.footer_menu {
+  margin-right: 8px;
+  font-size: 15px;
+  color: rgb(83, 100, 113);
+}

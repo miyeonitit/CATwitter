@@ -1,0 +1,49 @@
+.form_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+
+.value_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.value_label {
+  width: 60px;
+  margin-right: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(83, 100, 113);
+}
+
+.value_input {
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid rgb(83, 100, 113);
+}
+
+.login_button {
+  width: 300px;
+  padding: 12px 0px;
+  margin-top: 50px;
+  border-radius: 50px;
+  border: 1px solid rgb(207, 217, 222);
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+.login_button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
