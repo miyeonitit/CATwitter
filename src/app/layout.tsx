@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "냥. 무슨 일이 일어나고 있냐옹?",
   description: "CATwiiter - practice Next.js ver.13",
+  icons: { icon: "/favicon.ico" },
 };
 
 type Props = {

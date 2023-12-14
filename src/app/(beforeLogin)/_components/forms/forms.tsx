@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useContext, createContext } from "react";
+import { useRouter } from "next/navigation";
+
+import AfterLoginPage from "../../../(afterLogin)/page";
 
 import styles from "./forms.module.css";
 
@@ -60,17 +63,20 @@ const PasswordInput = () => {
   );
 };
 
-const LoginButton = () => {
+const ActiveButton = ({ buttonText }) => {
+  const router = useRouter();
+
   const { email, password } = useContext(FormContext);
 
-  const handleLogin = () => {
-    console.log(email, "email");
-    console.log(password, "pass");
+  const handleEvent = () => {
+    const goToPage = buttonText === "로그인" ? "/miyeon" : "";
+
+    return router.replace(goToPage);
   };
 
   return (
-    <button className={styles.login_button} onClick={handleLogin}>
-      로그인
+    <button className={styles.active_button} onClick={handleEvent}>
+      {buttonText}
     </button>
   );
 };
@@ -78,6 +84,6 @@ const LoginButton = () => {
 Form.Wrapper = Wrapper;
 Form.Email = EmailInput;
 Form.Password = PasswordInput;
-Form.LoginButton = LoginButton;
+Form.ActiveButton = ActiveButton;
 
 export default Form;

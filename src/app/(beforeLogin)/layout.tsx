@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-import styles from "./beforeLogin.module.css";
+import styles from "./layout.module.css";
 
 type Props = {
   children: ReactNode;

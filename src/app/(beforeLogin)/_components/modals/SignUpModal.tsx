@@ -4,7 +4,7 @@ import Form from "../forms/forms";
 
 import styles from "./modal.module.css";
 
-const LoginModal = () => {
+const SignUpModal = () => {
   return (
     <div className={styles.modal_outside_wrapper}>
       <div className={styles.modal_wrapper}>
@@ -16,7 +16,7 @@ const LoginModal = () => {
           <Form.Wrapper>
             <Form.Email />
             <Form.Password />
-            <Form.ActiveButton buttonText="로그인" />
+            <Form.ActiveButton buttonText="회원가입" />
           </Form.Wrapper>
         </Form>
       </div>
@@ -24,4 +24,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default SignUpModal;

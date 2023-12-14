@@ -1,9 +1,17 @@
+"use client";
+
 import { ReactNode } from "react";
 
-type Props = { children: ReactNode; modal: ReactNode };
-
-const layout = ({ children }: Props) => {
-  return <div>{children}</div>;
+type Props = {
+  children: ReactNode;
+  modal?: ReactNode;
 };
 
-export default layout;
+export default function afterLoginLayout({ children, modal }: Props) {
+  return (
+    <>
+      {children}
+      {modal && modal}
+    </>
+  );
+}

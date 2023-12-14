@@ -1,0 +1,16 @@
+.footer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100dvw;
+  padding: 16px 0px;
+  background-color: transparent;
+}
+
+.footer_menu {
+  margin-right: 8px;
+  font-size: 15px;
+  color: rgb(83, 100, 113);
+}
