@@ -7,18 +7,19 @@ import logo from "../../../../../public/nyang_foot.png";
 import userProfileImage from "../../../../../public/buzzy_logo.png";
 
 type leftMenuListType = {
+  id: string;
   name: string;
   src: string;
 };
 
 const LeftMenuNav = () => {
   const leftMenuList: leftMenuListType[] = [
-    { name: "Home", src: "" },
-    { name: "Explore", src: "" },
-    { name: "Messages", src: "" },
-    { name: "names", src: "" },
-    { name: "Bookmarks", src: "" },
-    { name: "Profile", src: "" },
+    { id: "Home", name: "Home", src: "" },
+    { id: "Explore", name: "Explore", src: "" },
+    { id: "Messages", name: "Messages", src: "" },
+    { id: "names", name: "names", src: "" },
+    { id: "Bookmarks", name: "Bookmarks", src: "" },
+    { id: "Profile", name: "Profile", src: "" },
   ];
 
   return (
@@ -33,7 +34,9 @@ const LeftMenuNav = () => {
         <div>
           <ul>
             {leftMenuList.map((menu) => (
-              <li className={styles.menu_list}>⋆ {menu.name}</li>
+              <li key={menu.id} className={styles.menu_list}>
+                ⋆ {menu.name}
+              </li>
             ))}
           </ul>
 

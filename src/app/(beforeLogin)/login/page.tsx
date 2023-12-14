@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import LoginMainPage from "../_components/main/LoginMainPage";
 
-const page = () => {
+const LoginPage = () => {
   const router = useRouter();
 
   router.replace("i/flow/login");
@@ -12,4 +12,4 @@ const page = () => {
   return <LoginMainPage />;
 };
 
-export default page;
+export default LoginPage;
