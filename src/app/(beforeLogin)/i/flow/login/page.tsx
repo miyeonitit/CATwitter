@@ -1,23 +1,17 @@
 "use client";
 
-import Form from "../../../_components/forms/forms";
+import Link from "next/link";
 
-import styles from "./loginModal.module.css";
+import LoginModal from "@/app/(beforeLogin)/_components/modals/LoginModal";
+
+import styles from "./loginModalOutside.module.css";
 
 const page = () => {
   return (
-    <div>
-      <div className={styles.modal_wrapper}>
-        <div className={styles.close_button}>X</div>
-
-        <Form>
-          <Form.Wrapper>
-            <Form.Email />
-            <Form.Password />
-            <Form.LoginButton />
-          </Form.Wrapper>
-        </Form>
-      </div>
+    <div className={styles.modal_outside_wrapper}>
+      <Link href="/">
+        <LoginModal />
+      </Link>
     </div>
   );
 };
