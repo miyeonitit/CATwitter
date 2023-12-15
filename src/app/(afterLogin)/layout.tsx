@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 
 import LeftMenuNav from "./_components/sideNavs/LeftMenuNav";
+import RightSideNav from "./_components/sideNavs/RightSideNav";
 
 import styles from "./layout.module.css";
 
@@ -17,7 +18,7 @@ export default function afterLoginLayout({ children }: Props) {
 
       <div>{children}</div>
 
-      <div></div>
+      <RightSideNav />
     </div>
   );
 }

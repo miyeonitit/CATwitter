@@ -1,0 +1,36 @@
+.promotion_box_wrapper {
+  padding: 12px;
+  margin: 16px 0px;
+  border-radius: 12px;
+  background-color: #f6f6f6;
+}
+
+.promotion_box_title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 24px;
+}
+
+.promotion_box_description {
+  margin: 8px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.payment_button {
+  width: 105px;
+  padding: 8px 0px;
+  margin-top: 18px;
+  border: unset;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.payment_button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
