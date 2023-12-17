@@ -16,7 +16,7 @@ export default function afterLoginLayout({ children }: Props) {
     <div className={styles.container}>
       <LeftMenuNav />
 
-      <div>{children}</div>
+      <div className={styles.children_container}>{children}</div>
 
       <RightSideNav />
     </div>

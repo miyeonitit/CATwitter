@@ -1,0 +1,25 @@
+.feed_page_wrapper {
+  min-width: 600px;
+  height: 100dvh;
+  border-left: 1px solid #f6f6f6;
+  border-right: 1px solid #f6f6f6;
+}
+
+.feed_page_header {
+  display: flex;
+  justify-content: center;
+}
+
+.header_tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 16px 0px;
+  border-bottom: 1px solid #f6f6f6;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgb(83, 100, 113);
+  cursor: pointer;
+}
