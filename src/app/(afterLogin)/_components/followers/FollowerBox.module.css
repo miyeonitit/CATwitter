@@ -1,0 +1,68 @@
+.follower_box_wrapper {
+  border-radius: 12px;
+  background-color: #f6f6f6;
+}
+
+.follower_box_title {
+  padding: 14px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 24px;
+}
+
+.follower_box_contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.follower_box_contents:hover {
+  background-color: #eaeaea;
+}
+
+.follower_infomation {
+  display: flex;
+}
+
+.follower_profile_image_box {
+  margin-right: 10px;
+}
+
+.follower_tag {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgb(83, 100, 113);
+  cursor: pointer;
+}
+
+.follower_words {
+  margin: 2px 0px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.follow_button_box {
+  display: flex;
+  align-items: center;
+}
+
+.follow_button {
+  width: 77px;
+  padding: 8px 0px;
+  margin-top: 18px;
+  border: unset;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.follow_button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}

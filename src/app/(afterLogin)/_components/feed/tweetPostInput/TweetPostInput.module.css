@@ -1,5 +1,6 @@
 .feed_post_wrapper {
   display: flex;
+  width: 100%;
   padding: 16px;
   border-bottom: 1px solid #f6f6f6;
 }
@@ -40,6 +41,7 @@
 
 .menu_icon {
   margin-right: 6px;
+  cursor: pointer;
 }
 
 .post_button {
@@ -49,6 +51,8 @@
   border-radius: 24px;
   font-size: 14px;
   font-weight: 600;
+  transition-duration: 0.2s;
+  transition-property: background-color;
   color: white;
   background-color: rgb(29, 155, 240);
   cursor: pointer;

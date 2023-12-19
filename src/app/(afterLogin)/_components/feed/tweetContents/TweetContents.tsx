@@ -1,4 +1,7 @@
 import Image from "next/image";
+import dayjs from "dayjs";
+import "dayjs/locale/ko";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 import styles from "./TweetContents.module.css";
 
@@ -8,23 +11,45 @@ import nonHeartIcon from "../../../../../../public/non_heart_icon.png";
 import filledHeartIcon from "../../../../../../public/filled_heart_icon.png";
 import sharedIcon from "../../../../../../public/shared_icon.png";
 
+dayjs.locale("ko");
+dayjs.extend(relativeTime);
+
 const TweetContents = () => {
+  const mockData = {
+    User: {
+      id: "cat_star",
+      nickname: "캣스타",
+      profile_image: profileImage,
+    },
+    content: "귀여운 버찌 보고 가세요",
+    created_at: new Date(),
+    images: [],
+  };
+
   return (
-    <div className={styles.feed_contents_wrapper}>
+    <article className={styles.feed_contents_wrapper}>
       <div className={styles.feed_contents_image_box}>
-        <Image src={profileImage} alt="profile_image" width={40} height={40} />
+        <Image
+          src={mockData.User.profile_image}
+          alt="profile_image"
+          width={40}
+          height={40}
+        />
       </div>
 
       <div className={styles.feed_contents_box}>
         <div className={styles.feed_contents_title}>
-          <div className={styles.feed_contents_user_name}>user name</div>
+          <div className={styles.feed_contents_user_name}>
+            {mockData.User.nickname}
+          </div>
           <div className={styles.feed_contents_user_infomation}>
-            <span>@user id tag</span> • <span>upload date</span>
+            <span>@{mockData.User.id}</span> •{" "}
+            <span>{dayjs(mockData.created_at).fromNow()}</span>
           </div>
         </div>
 
         <div>
-          <div className={styles.feed_contents_text}>user contents text</div>
+          <div className={styles.feed_contents_text}>{mockData.content}</div>
           <div className={styles.feed_contents_image_box}>
             <Image
               src={feedContentsImage}
@@ -51,7 +76,7 @@ const TweetContents = () => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

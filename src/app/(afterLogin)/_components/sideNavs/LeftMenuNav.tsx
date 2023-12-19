@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 import styles from "./LeftMenuNav.module.css";
 
@@ -13,19 +14,19 @@ type leftMenuListType = {
 };
 
 const LeftMenuNav = () => {
+  const segment: string | null = useSelectedLayoutSegment();
+
   const leftMenuList: leftMenuListType[] = [
-    { id: "Home", name: "Home", src: "" },
-    { id: "Explore", name: "Explore", src: "" },
-    { id: "Messages", name: "Messages", src: "" },
-    { id: "names", name: "names", src: "" },
-    { id: "Bookmarks", name: "Bookmarks", src: "" },
-    { id: "Profile", name: "Profile", src: "" },
+    { id: "Home", name: "Home", src: "/home" },
+    { id: "Explore", name: "Explore", src: "/explore" },
+    { id: "Messages", name: "Messages", src: "/messages" },
+    { id: "Profile", name: "Profile", src: "/profile" },
   ];
 
   return (
     <div className={styles.left_menu_nav_wrapper}>
       <div>
-        <Link href="/miyeon">
+        <Link href="/home">
           <div className={styles.menu_header}>
             <Image src={logo} alt="buzzy_logo" width={30} />
           </div>
@@ -34,14 +35,24 @@ const LeftMenuNav = () => {
         <div>
           <ul>
             {leftMenuList.map((menu) => (
-              <li key={menu.id} className={styles.menu_list}>
-                ⋆ {menu.name}
-              </li>
+              <Link href={menu.src} key={menu.id}>
+                <li
+                  className={
+                    segment === menu.src.split("/")[1]
+                      ? styles.menu_list_bold
+                      : styles.menu_list
+                  }
+                >
+                  ⋆ {menu.name}
+                </li>
+              </Link>
             ))}
           </ul>
 
           <div>
-            <button className={styles.post_button}>Post</button>
+            <Link href="/compose/tweet">
+              <button className={styles.post_button}>Post</button>
+            </Link>
           </div>
         </div>
       </div>

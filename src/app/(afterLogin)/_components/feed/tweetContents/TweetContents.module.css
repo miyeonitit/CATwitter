@@ -2,10 +2,12 @@
   display: flex;
   padding: 16px;
   border-bottom: 1px solid #f6f6f6;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
 }
 
 .feed_contents_wrapper:hover {
-  background-color: #eaeaea;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .feed_contents_image_box {
@@ -16,7 +18,7 @@
 
 .feed_contents_title {
   display: flex;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 .feed_contents_user_name {

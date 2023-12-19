@@ -39,6 +39,17 @@
   background-color: #f6f6f6;
 }
 
+.menu_list_bold {
+  width: fit-content;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  list-style-type: none;
+  color: #353535;
+  cursor: pointer;
+}
+
 .post_button {
   width: 100%;
   padding: 12px 0px;
