@@ -1,4 +1,5 @@
 .follower_box_wrapper {
+  margin-top: 16px;
   border-radius: 12px;
   background-color: #f6f6f6;
 }
@@ -53,7 +54,6 @@
 .follow_button {
   width: 77px;
   padding: 8px 0px;
-  margin-top: 18px;
   border: unset;
   border-radius: 24px;
   font-size: 15px;
@@ -64,5 +64,5 @@
 }
 
 .follow_button:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 }
