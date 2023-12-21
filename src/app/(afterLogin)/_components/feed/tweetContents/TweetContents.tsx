@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
 import dayjs from "dayjs";
@@ -28,7 +29,7 @@ const TweetContents = () => {
     },
     content: "귀여운 버찌 보고 가세요",
     created_at: new Date(),
-    images: [],
+    images: [] as any[],
   };
 
   return (
@@ -60,21 +61,20 @@ const TweetContents = () => {
 
         <div>
           <div className={styles.feed_contents_text}>{mockData.content}</div>
-          <div className={styles.feed_contents_image_box}>
-            <Image
-              src={feedContentsImage}
-              className={styles.feed_contents_image}
-              alt="contents_image"
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-            />
-          </div>
+          <Link href={`/miyeon/status/14/photo/55`}>
+            <div className={styles.feed_contents_image_box}>
+              <Image
+                src={feedContentsImage}
+                className={styles.feed_contents_image}
+                alt="contents_image"
+                sizes="100vw"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
+          </Link>
         </div>
 
         <div className={styles.feed_contents_footer}>
-          <div>
-            <Image src={sharedIcon} alt="shared_icon" width={15} height={15} />
-          </div>
           <div className={styles.heart_icon_box}>
             <Image
               src={filledHeartIcon}
@@ -84,6 +84,9 @@ const TweetContents = () => {
               height={15}
             />
             <span className={styles.feed_contents_user_infomation}>12.2K</span>
+          </div>
+          <div className={styles.shared_icon_box}>
+            <Image src={sharedIcon} alt="shared_icon" width={14} height={14} />
           </div>
         </div>
       </div>

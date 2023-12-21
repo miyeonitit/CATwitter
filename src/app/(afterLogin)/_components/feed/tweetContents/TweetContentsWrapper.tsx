@@ -26,7 +26,9 @@ const TweetContentsWrapper = ({ children, post }: Props) => {
   return (
     <article
       className={styles.feed_contents_wrapper}
-      onClick={() => router.push(`/${post.User.id}/status/${post.post_id}`)}
+      onClickCapture={() =>
+        router.push(`/${post.User.id}/status/${post.post_id}`)
+      }
     >
       {children}
     </article>
