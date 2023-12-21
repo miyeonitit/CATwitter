@@ -1,5 +1,5 @@
-import Tab from "./_components/Tab";
-import TabProvider from "./_components/provider/TabProvider";
+import Tab from "../_components/tab/Tab";
+import TabProvider from "../_components/tab/provider/TabProvider";
 import TweetContents from "../_components/feed/tweetContents/TweetContents";
 import TweetPostInput from "../_components/feed/tweetPostInput/TweetPostInput";
 
@@ -9,7 +9,7 @@ const FeedPage = () => {
   return (
     <div className={styles.feed_page_wrapper}>
       <TabProvider>
-        <Tab />
+        <Tab leftTab="For you" rightTab="Following" />
 
         <TweetPostInput />
 

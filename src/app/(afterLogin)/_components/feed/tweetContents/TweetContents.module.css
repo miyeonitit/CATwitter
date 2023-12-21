@@ -1,19 +1,14 @@
-.feed_contents_wrapper {
-  display: flex;
-  padding: 16px;
-  border-bottom: 1px solid #f6f6f6;
-  transition-property: background-color, box-shadow;
-  transition-duration: 0.2s;
-}
-
-.feed_contents_wrapper:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
 .feed_contents_image_box {
   display: flex;
   flex-direction: column;
-  margin-right: 22px;
+}
+
+.profile_image_box_wrapper {
+  margin-right: 10px;
+}
+
+.feed_contents_box {
+  width: 100%;
 }
 
 .feed_contents_title {
@@ -38,10 +33,6 @@
 .feed_contents_text {
   margin-bottom: 12px;
   font-size: 15px;
-}
-
-.feed_contents_image_box {
-  width: 100%;
 }
 
 .feed_contents_image {

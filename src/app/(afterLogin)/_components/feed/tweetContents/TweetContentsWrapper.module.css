@@ -1,0 +1,11 @@
+.feed_contents_wrapper {
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid #f6f6f6;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+}
+
+.feed_contents_wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}

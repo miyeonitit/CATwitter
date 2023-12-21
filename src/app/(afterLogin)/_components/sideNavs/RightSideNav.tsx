@@ -1,3 +1,6 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 import SearchBar from "../search/searchBar/SearchBar";
@@ -11,13 +14,17 @@ import styles from "./RightSideNav.module.css";
 const RightSideNav = () => {
   const segment: string | null = useSelectedLayoutSegment();
 
+  const searchParams = useSearchParams();
+
+  const query: string | null = searchParams.get("query");
+
   return (
     <div className={styles.left_menu_nav_wrapper}>
-      {segment === "explore" ? (
+      {segment === "explore" || segment === "search" ? (
         <SearchFilter />
       ) : (
         <>
-          <SearchBar />
+          <SearchBar query={query} />
 
           <PromotionBox />
           <SearchRankingBox />

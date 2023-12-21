@@ -4,5 +4,6 @@
 }
 
 .children_container {
+  width: 600px;
   height: 100dvh;
 }

@@ -1,0 +1,35 @@
+.profile_header_wrapper {
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  margin: 8px 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+.back_icon_box {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.user_infomation_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.user_nickname {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.user_posts_leangth {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgb(83, 100, 113);
+}

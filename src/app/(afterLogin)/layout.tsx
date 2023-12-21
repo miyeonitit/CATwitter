@@ -7,12 +7,12 @@ import RightSideNav from "./_components/sideNavs/RightSideNav";
 
 import styles from "./layout.module.css";
 
-type Props = {
+type LayoutProps = {
   children: ReactNode;
   modal?: ReactNode;
 };
 
-export default function afterLoginLayout({ children, modal }: Props) {
+export default function afterLoginLayout({ children, modal }: LayoutProps) {
   return (
     <div className={styles.container}>
       {modal && modal}

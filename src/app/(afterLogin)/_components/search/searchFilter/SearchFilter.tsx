@@ -1,5 +1,6 @@
-import styles from "./SearchFilter.module.css";
 import cx from "classnames";
+
+import styles from "./SearchFilter.module.css";
 
 const SearchFilter = () => {
   return (

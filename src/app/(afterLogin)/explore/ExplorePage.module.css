@@ -1,6 +1,9 @@
 .explore_page_wrapper {
-  min-width: 600px;
   margin-top: 16px;
   border-left: 1px solid #f6f6f6;
   border-right: 1px solid #f6f6f6;
+}
+
+.search_bar_box {
+  margin-bottom: 16px;
 }

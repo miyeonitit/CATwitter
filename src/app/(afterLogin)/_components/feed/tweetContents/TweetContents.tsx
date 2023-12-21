@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import cx from "classnames";
 import dayjs from "dayjs";
 import "dayjs/locale/ko";
 import relativeTime from "dayjs/plugin/relativeTime";
+
+import TweetContentsWrapper from "./TweetContentsWrapper";
 
 import styles from "./TweetContents.module.css";
 
@@ -27,8 +32,13 @@ const TweetContents = () => {
   };
 
   return (
-    <article className={styles.feed_contents_wrapper}>
-      <div className={styles.feed_contents_image_box}>
+    <TweetContentsWrapper>
+      <div
+        className={cx(
+          styles.feed_contents_image_box,
+          styles.profile_image_box_wrapper
+        )}
+      >
         <Image
           src={mockData.User.profile_image}
           alt="profile_image"
@@ -55,7 +65,8 @@ const TweetContents = () => {
               src={feedContentsImage}
               className={styles.feed_contents_image}
               alt="contents_image"
-              width={600}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
             />
           </div>
         </div>
@@ -76,7 +87,7 @@ const TweetContents = () => {
           </div>
         </div>
       </div>
-    </article>
+    </TweetContentsWrapper>
   );
 };
 
