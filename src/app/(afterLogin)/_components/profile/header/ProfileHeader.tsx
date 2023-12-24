@@ -1,6 +1,6 @@
-import styles from "./ProfileHeader.module.css";
-
 import BackButton from "../../button/backButton/BackButton";
+
+import styles from "./ProfileHeader.module.css";
 
 const ProfileHeader = () => {
   return (

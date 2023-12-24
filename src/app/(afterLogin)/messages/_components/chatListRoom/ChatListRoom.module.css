@@ -17,14 +17,9 @@
 }
 
 .user_profile_image {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   border-radius: 50px;
-}
-
-.user_infomation {
-  display: flex;
-  margin-bottom: 2px;
 }
 
 .user_name {
@@ -34,7 +29,7 @@
   line-height: 20px;
 }
 
-.user_id_date {
+.user_id {
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
