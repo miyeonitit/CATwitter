@@ -4,6 +4,8 @@ import { ReactNode } from "react";
 
 import "./globals.css";
 
+import { MSWcomponent } from "./_components/MSWcomponent";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default function RootLayout({ children, modal }: Props) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <MSWcomponent />
         {children}
         {modal}
       </body>
