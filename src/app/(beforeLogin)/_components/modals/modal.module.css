@@ -25,3 +25,9 @@
   font-size: 24px;
   cursor: pointer;
 }
+
+.error {
+  font-size: 12px;
+  font-weight: 600;
+  color: red;
+}
