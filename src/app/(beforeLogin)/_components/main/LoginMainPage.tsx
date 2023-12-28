@@ -32,7 +32,7 @@ const LoginMainPage = () => {
           <p className={styles.button_infomation}>
             이미 CATwitter에 가입하셨나요?
           </p>
-          <Link href="/login">
+          <Link href="/i/flow/login">
             <button className={styles.login_button}>로그인</button>
           </Link>
         </div>

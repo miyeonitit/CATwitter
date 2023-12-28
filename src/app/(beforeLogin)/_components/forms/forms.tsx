@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useContext, createContext } from "react";
-import { usePathname } from "next/navigation";
 
 import FormType from "@/interfaces/FormType";
 
@@ -43,8 +42,6 @@ const FormContext = createContext<FormContextType>({
 });
 
 const Form: React.FC<FormProps> & FromChildProps = (props) => {
-  const pathname = usePathname();
-
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -57,18 +54,12 @@ const Form: React.FC<FormProps> & FromChildProps = (props) => {
 
   const postFormData = () => {
     if (!email || !password) {
-      // alert("아이디나 비밀번호를 확인해 주세요.");
+      alert("아이디나 비밀번호를 확인해 주세요.");
     } else {
-      const body =
-        pathname === "/i/flow/signup"
-          ? {
-              email: email,
-              password: password,
-            }
-          : {
-              email: email,
-              password: password,
-            };
+      const body = {
+        email: email,
+        password: password,
+      };
 
       props.action(body);
     }

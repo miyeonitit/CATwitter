@@ -1,14 +1,14 @@
-import { useFormState, useFormStatus } from "react-dom";
 import Link from "next/link";
+import { useFormState, useFormStatus } from "react-dom";
 
-import handlerFormSubmit from "../../_lib/signup";
+import handlerSignUpPost from "../../_lib/signup";
 
 import Form from "../forms/forms";
 
 import styles from "./modal.module.css";
 
 const SignUpModal = () => {
-  const [state, formAction] = useFormState(handlerFormSubmit, {
+  const [state, formAction] = useFormState(handlerSignUpPost, {
     message: null,
   });
   const { pending } = useFormStatus();

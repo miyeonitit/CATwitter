@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useRouter, useSelectedLayoutSegment } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
+
+import UserType from "@/interfaces/UserType";
 
 import styles from "./LeftMenuNav.module.css";
 
@@ -14,7 +17,9 @@ type leftMenuListType = {
 };
 
 const LeftMenuNav = () => {
+  const router = useRouter();
   const segment: string | null = useSelectedLayoutSegment();
+  const { data: UserType } = useSession();
 
   const leftMenuList: leftMenuListType[] = [
     { id: "Home", name: "Home", src: "/home" },
@@ -22,6 +27,12 @@ const LeftMenuNav = () => {
     { id: "Messages", name: "Messages", src: "/messages" },
     { id: "Profile", name: "Profile", src: "/profile" },
   ];
+
+  const handleLogout = () => {
+    signOut({ redirect: false }).then(() => {
+      router.replace("/");
+    });
+  };
 
   return (
     <div className={styles.left_menu_nav_wrapper}>
@@ -57,7 +68,10 @@ const LeftMenuNav = () => {
         </div>
       </div>
 
-      <div className={styles.user_profile_wrapper}>
+      <div
+        className={styles.user_profile_wrapper}
+        onClick={() => handleLogout()}
+      >
         <div className={styles.user_profile_image_box}>
           <Image src={userProfileImage} alt="user_profile_image" width={40} />
         </div>

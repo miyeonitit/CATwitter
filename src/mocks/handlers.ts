@@ -15,9 +15,24 @@ const generateDate = () => {
 const Posts = [];
 
 const User = [
-  { id: "catmom", nickname: "cat_lover", image: faker.image.avatar() },
-  { id: "yeony", nickname: "여니", image: faker.image.avatar() },
-  { id: "random", nickname: "랜덤", image: faker.image.avatar() },
+  {
+    id: 11,
+    email: "catmom@test.com",
+    name: "cat_lover",
+    image: faker.image.avatar(),
+  },
+  {
+    id: 22,
+    email: "yeony@test.com",
+    name: "여니",
+    image: faker.image.avatar(),
+  },
+  {
+    id: 33,
+    email: "random@test.com",
+    name: "버찌짱",
+    image: faker.image.avatar(),
+  },
 ];
 
 const delay = (ms: number) =>
