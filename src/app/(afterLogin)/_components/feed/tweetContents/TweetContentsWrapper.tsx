@@ -1,12 +1,12 @@
 "use client";
 
-import { ReactNode } from "react";
 import { useRouter } from "next/navigation";
+
+import { LayoutProps } from "@/interfaces/LayoutProps";
 
 import styles from "./TweetContentsWrapper.module.css";
 
 type Props = {
-  children: ReactNode;
   post: {
     post_id: number;
     content: string;
@@ -20,7 +20,7 @@ type Props = {
   };
 };
 
-const TweetContentsWrapper = ({ children, post }: Props) => {
+const TweetContentsWrapper = ({ children, post }: Props & LayoutProps) => {
   const router = useRouter();
 
   return (
