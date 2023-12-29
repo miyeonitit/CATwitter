@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { signIn } from "@/auth";
+import { signIn } from "next-auth/react";
 
 import FormType from "@/interfaces/FormType";
 import AxiosInstance from "@/axios/AxiosInstance";
