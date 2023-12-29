@@ -17,8 +17,8 @@ module.exports = {
       name: "✅ Test:\tCode change related with tests cases",
     },
     {
-      value: "🚚 Chore",
-      name: "🚚 Chore:\tChanges to the build process or auxiliary tools\n\t\tand libraries such as documentation generation",
+      value: "🚚 ETC",
+      name: "🚚 ETC:\tChanges to the build process or auxiliary tools\n\t\tand libraries such as documentation generation",
     },
   ],
   allowCustomScopes: false,
