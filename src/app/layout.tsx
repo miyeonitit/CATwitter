@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ReactNode } from "react";
+import React, { ReactElement } from "react";
+
+import { LayoutProps } from "@/interfaces/LayoutProps";
 
 import { MSWcomponent } from "./_components/MSWcomponent";
 import AuthSessionProvider from "./_components/AuthSessionProvider";
@@ -15,19 +17,17 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.ico" },
 };
 
-type Props = {
-  children: ReactNode;
-  modal?: ReactNode;
-};
-
-export default function RootLayout({ children, modal }: Props) {
+export default function RootLayout({
+  children,
+  modal,
+}: LayoutProps): ReactElement {
   return (
     <html lang="en">
       <body className={inter.className}>
         <MSWcomponent />
         <AuthSessionProvider>
           {children}
-          {modal}
+          {modal && modal}
         </AuthSessionProvider>
       </body>
     </html>

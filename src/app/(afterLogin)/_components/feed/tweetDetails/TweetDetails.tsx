@@ -13,7 +13,6 @@ import feedContentsImage from "../../../../../../public/buzzy_feed_image.png";
 import nonHeartIcon from "../../../../../../public/non_heart_icon.png";
 import filledHeartIcon from "../../../../../../public/filled_heart_icon.png";
 import sharedIcon from "../../../../../../public/shared_icon.png";
-import contentsImage from "../../../../../../public/matdori.JPG";
 
 dayjs.locale("ko");
 dayjs.extend(relativeTime);
@@ -57,7 +56,7 @@ const TweetDetails = () => {
         <div className={styles.user_post_detail_text}>{mockData.content}</div>
         <div className={styles.user_post_detail_image_box}>
           <Image
-            src={contentsImage}
+            src={feedContentsImage}
             className={styles.user_post_detail_image}
             alt="contents_image"
             sizes="100vw"

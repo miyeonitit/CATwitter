@@ -1,23 +1,16 @@
-- [ ] ✨ ADD : 기능 추가 및 개선
-- [ ] 🐛 BUG : 버그 수정
-- [ ] 📝 DOCS : 문서 수정
-- [ ] ♻️ REFACTOR : 리팩토링
-- [ ] ✅ TEST : 테스트 코드 추가
-- [ ] 🚑️ HOTFIX : 급한 버그 수정
-- [ ] 🔃 RENAME : 파일명 수정, 폴더 변경
-- [ ] 🗑 REMOVE : 파일 삭제
-- [ ] 🚚 ETC : 이외에 다른 경우
-- [ ] 💚 CI : CI 수정 및 추가
-- [ ] 🚀 CD : CD 수정 및 추가
+- [x] 🏗️ **WIP** : Work in progress
+- [ ] ✨ **Feat** : Add a new feature
+- [ ] 🐛 **Modify** : tModify production, UI,UX code
+- [ ] 📝 **Docs** : Add or update documentation
+- [ ] 💄 **Style** : Add or update code format (not updation production, UI,UX code)
+- [ ] 🤖 **Refactor** : Code change that neither fixes a bug nor adds a feature
+- [ ] ✅ **Test** : Code change related with tests cases
+- [ ] 🚚 **ETC** : etc
 
-# 1. 변경사항
+# 1. install library
 
 -
 
-# 2. 추가사항
-
--
-
-# 3. 버그
+# 2. learning point
 
 -

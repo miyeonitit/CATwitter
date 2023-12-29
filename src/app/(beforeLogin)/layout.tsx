@@ -1,13 +1,8 @@
 "use client";
 
-import { ReactNode } from "react";
+import { LayoutProps } from "@/interfaces/LayoutProps";
 
 import styles from "./layout.module.css";
-
-type Props = {
-  children: ReactNode;
-  modal?: ReactNode;
-};
 
 type footerMenuListType = {
   id: string;
@@ -15,7 +10,7 @@ type footerMenuListType = {
   src: string;
 };
 
-export default function beforeLoginLayout({ children, modal }: Props) {
+export default function beforeLoginLayout({ children, modal }: LayoutProps) {
   const footerMenuList: footerMenuListType[] = [
     { id: "intro", name: "소개", src: "" },
     { id: "engineers", name: "개발자", src: "" },
