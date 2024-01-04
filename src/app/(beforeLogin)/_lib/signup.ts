@@ -6,12 +6,15 @@ import { signIn } from "next-auth/react";
 import FormType from "@/interfaces/FormType";
 import AxiosInstance from "@/axios/AxiosInstance";
 
-const handlerSignUpPost = async (prevState: any, body: FormType) => {
-  if (!body.email || body.email === " ") {
+const handlerSignUpPost = async (
+  prevState: { message: string | null },
+  body: FormType
+) => {
+  if (!body.email || !body.email?.trim()) {
     return { message: "no_id" };
   }
 
-  if (!body.password || body.password === " ") {
+  if (!body.password || !body.password?.trim()) {
     return { message: "no_password" };
   }
 

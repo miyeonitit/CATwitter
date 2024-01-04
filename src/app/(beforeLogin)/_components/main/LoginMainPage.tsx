@@ -1,11 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 import styles from "./LoginMainPage.module.css";
 
 import logo from "../../../../../public/buzzy.png";
 
 const LoginMainPage = () => {
+  const router = useRouter();
+  const session = useSession();
+
+  if (session?.data) {
+    router.replace("/home");
+  }
+
   return (
     <div className={styles.main_wrapper}>
       <div className={styles.logo_section}>

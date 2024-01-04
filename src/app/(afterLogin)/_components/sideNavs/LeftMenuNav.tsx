@@ -3,8 +3,6 @@ import Link from "next/link";
 import { useRouter, useSelectedLayoutSegment } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 
-import UserType from "@/interfaces/UserType";
-
 import styles from "./LeftMenuNav.module.css";
 
 import logo from "../../../../../public/nyang_foot.png";
@@ -18,8 +16,8 @@ type leftMenuListType = {
 
 const LeftMenuNav = () => {
   const router = useRouter();
+  const { data } = useSession();
   const segment: string | null = useSelectedLayoutSegment();
-  const { data: UserType } = useSession();
 
   const leftMenuList: leftMenuListType[] = [
     { id: "Home", name: "Home", src: "/home" },
@@ -68,19 +66,39 @@ const LeftMenuNav = () => {
         </div>
       </div>
 
-      <div
-        className={styles.user_profile_wrapper}
-        onClick={() => handleLogout()}
-      >
-        <div className={styles.user_profile_image_box}>
-          <Image src={userProfileImage} alt="user_profile_image" width={40} />
-        </div>
+      {data ? (
+        <div
+          className={styles.user_profile_wrapper}
+          onClick={() => handleLogout()}
+        >
+          <div className={styles.user_profile_image_box}>
+            <Image
+              src={data?.user.image}
+              alt="user_profile_image"
+              width={40}
+              height={40}
+            />
+          </div>
 
-        <div>
-          <div className={styles.user_nickname}>miyeonitit</div>
-          <div className={styles.user_account}>@buzzy_nyang</div>
+          <div>
+            <div className={styles.user_nickname}>{data?.user.name}</div>
+            <div className={styles.user_account}>{data?.user.email}</div>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div
+          className={styles.user_profile_wrapper}
+          onClick={() => router.replace("/")}
+        >
+          <div className={styles.user_profile_image_box}>
+            <Image src={userProfileImage} alt="user_profile_image" width={40} />
+          </div>
+
+          <div>
+            <div className={styles.user_nickname}>로그인을 해보세요!</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

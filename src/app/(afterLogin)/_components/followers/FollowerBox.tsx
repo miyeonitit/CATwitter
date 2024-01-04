@@ -1,10 +1,21 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 import styles from "./FollowerBox.module.css";
 
 import profileImage from "../../../../../public/profile_image.png";
 
 const FollowerBox = () => {
+  const router = useRouter();
+  const { data } = useSession();
+
+  const handleUserFollow = () => {
+    if (!data) {
+      router.replace("/login");
+    }
+  };
+
   return (
     <div className={styles.follower_box_wrapper}>
       <div className={styles.follower_box_title}>Who to follow</div>
@@ -26,7 +37,12 @@ const FollowerBox = () => {
         </div>
 
         <div className={styles.follow_button_box}>
-          <button className={styles.follow_button}>Follow</button>
+          <button
+            className={styles.follow_button}
+            onClick={() => handleUserFollow()}
+          >
+            Follow
+          </button>
         </div>
       </div>
     </div>
