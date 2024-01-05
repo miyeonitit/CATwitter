@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useState, useContext, createContext } from "react";
-
-import FormType from "@/interfaces/FormType";
+import React, { useState, useContext, createContext, FormEvent } from "react";
 
 import styles from "./forms.module.css";
 
 type FormProps = {
-  action: (body: FormType) => void;
+  action: React.FormEventHandler<HTMLFormElement>;
   children: React.ReactNode;
 };
 
@@ -52,22 +50,24 @@ const Form: React.FC<FormProps> & FromChildProps = (props) => {
     setPassword,
   };
 
-  const postFormData = () => {
+  const postFormData = (event: FormEvent<HTMLFormElement>) => {
     if (!email || !password) {
       alert("아이디나 비밀번호를 확인해 주세요.");
     } else {
-      const body = {
-        email: email,
-        password: password,
-      };
-
-      props.action(body);
+      console.log(typeof event, event);
+      props.action(event);
     }
   };
 
   return (
     <FormContext.Provider value={contextValue}>
-      <form action={postFormData}>{props.children}</form>
+      <form
+        onSubmit={(e: FormEvent<HTMLFormElement>) =>
+          postFormData(e as FormEvent<HTMLFormElement>)
+        }
+      >
+        {props.children}
+      </form>
     </FormContext.Provider>
   );
 };

@@ -1,10 +1,13 @@
 "use client";
 
+import React from "react";
 import { useRouter } from "next/navigation";
 
-import { LayoutProps } from "@/interfaces/LayoutProps";
-
 import styles from "./TweetContentsWrapper.module.css";
+
+type LayoutProps = {
+  children: React.ReactNode;
+};
 
 type Props = {
   post: {
@@ -20,15 +23,15 @@ type Props = {
   };
 };
 
-const TweetContentsWrapper = ({ children, post }: Props & LayoutProps) => {
+const TweetContentsWrapper = ({ children }: LayoutProps) => {
   const router = useRouter();
 
   return (
     <article
       className={styles.feed_contents_wrapper}
-      onClickCapture={() =>
-        router.push(`/${post.User.id}/status/${post.post_id}`)
-      }
+      // onClickCapture={() =>
+      //   router.push(`/${post.User.id}/status/${post.post_id}`)
+      // }
     >
       {children}
     </article>

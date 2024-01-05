@@ -73,7 +73,7 @@ const LeftMenuNav = () => {
         >
           <div className={styles.user_profile_image_box}>
             <Image
-              src={data?.user.image}
+              src={data?.user?.image || userProfileImage}
               alt="user_profile_image"
               width={40}
               height={40}
@@ -81,8 +81,8 @@ const LeftMenuNav = () => {
           </div>
 
           <div>
-            <div className={styles.user_nickname}>{data?.user.name}</div>
-            <div className={styles.user_account}>{data?.user.email}</div>
+            <div className={styles.user_nickname}>{data?.user?.name}</div>
+            <div className={styles.user_account}>{data?.user?.email}</div>
           </div>
         </div>
       ) : (

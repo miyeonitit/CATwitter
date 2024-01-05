@@ -4,9 +4,7 @@ import styles from "./SearchBar.module.css";
 
 import searchIcon from "../../../../../../public/search_icon.png";
 
-type Props = { searchParams: { query: string; filter?: string } };
-
-const SearchBar = ({ searchParams }: Props) => {
+const SearchBar = ({ query }: { query: string | null }) => {
   return (
     <div className={styles.search_bar_wrapper}>
       <Image src={searchIcon} alt="search_icon" width={16} height={16} />
