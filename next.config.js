@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cloudflare-ipfs.com",
+        hostname: "avatars.githubusercontent.com",
         port: "",
-        pathname: "/ipfs/**",
+        pathname: "/u/**",
       },
     ],
   },
