@@ -33,6 +33,18 @@ const User = [
     name: "버찌짱",
     image: faker.image.avatar(),
   },
+  {
+    id: 44,
+    email: "ggomi1313@test.com",
+    name: "꼬미",
+    image: faker.image.avatar(),
+  },
+  {
+    id: 55,
+    email: "lovely@test.com",
+    name: "러비더비",
+    image: faker.image.avatar(),
+  },
 ];
 
 const delay = (ms: number) =>
@@ -367,14 +379,14 @@ export const handlers = [
       {
         postId: cursor + 1,
         User: User[0],
-        content: `${cursor + 1} Z.com is so marvelous. I'm gonna buy that.`,
+        content: `내 고양이 좀 예쁜 듯`,
         Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
         createdAt: generateDate(),
       },
       {
         postId: cursor + 2,
-        User: User[0],
-        content: `${cursor + 2} Z.com is so marvelous. I'm gonna buy that.`,
+        User: User[1],
+        content: `집사 다이어트 시키는 고양이`,
         Images: [
           { imageId: 1, link: faker.image.urlLoremFlickr() },
           { imageId: 2, link: faker.image.urlLoremFlickr() },
@@ -383,15 +395,15 @@ export const handlers = [
       },
       {
         postId: cursor + 3,
-        User: User[0],
-        content: `${cursor + 3} Z.com is so marvelous. I'm gonna buy that.`,
-        Images: [],
+        User: User[2],
+        content: `지구는 고양이 별인 게 틀림없어`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
         createdAt: generateDate(),
       },
       {
         postId: cursor + 4,
-        User: User[0],
-        content: `${cursor + 4} Z.com is so marvelous. I'm gonna buy that.`,
+        User: User[3],
+        content: `모두가 냥이를 사랑해`,
         Images: [
           { imageId: 1, link: faker.image.urlLoremFlickr() },
           { imageId: 2, link: faker.image.urlLoremFlickr() },
@@ -402,8 +414,8 @@ export const handlers = [
       },
       {
         postId: cursor + 5,
-        User: User[0],
-        content: `${cursor + 5} Z.com is so marvelous. I'm gonna buy that.`,
+        User: User[4],
+        content: `냥이 없으면 못사는 사람이 되어벌인 인간..`,
         Images: [
           { imageId: 1, link: faker.image.urlLoremFlickr() },
           { imageId: 2, link: faker.image.urlLoremFlickr() },
