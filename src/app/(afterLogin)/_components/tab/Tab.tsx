@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import cx from "classnames";
+
+import { TabContext } from "./provider/TabProvider";
 
 import styles from "./Tab.module.css";
 
@@ -18,7 +20,15 @@ const Tab = ({ leftTab, rightTab }: Props) => {
 
   const query = searchParams.get("query");
 
-  const [tab, setTab] = useState<string>(leftTab);
+  const { tab, setTab } = useContext(TabContext);
+
+  useEffect(() => {
+    if (tab === rightTab) {
+      router.replace(`?tab=${tab}`);
+    } else {
+      router.replace(`/home`);
+    }
+  }, [tab, router]);
 
   useEffect(() => {
     if (pathName === "/search" && !query) {

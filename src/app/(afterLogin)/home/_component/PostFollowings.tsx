@@ -3,15 +3,15 @@
 import { useQuery } from "@tanstack/react-query";
 
 import PostType from "@/interfaces/PostType";
-import { getPostRecommends } from "../_lib/getPostRecommends";
+import { getFollowingPosts } from "../_lib/getFollowingPosts";
 
 import TweetContents from "../../_components/feed/tweetContents/TweetContents";
 import FetchingDataLoading from "../../_components/loading/FetchingDataLoading";
 
-const PostRecommends = () => {
+const PostFollowings = () => {
   const { status, data, error } = useQuery({
-    queryKey: ["posts", "recommends"],
-    queryFn: getPostRecommends,
+    queryKey: ["posts", "followings"],
+    queryFn: getFollowingPosts,
     staleTime: 60000, // n초(1분 - ms) 뒤에 상태 변경 fresh -> stale
     gcTime: 500000,
   });
@@ -29,4 +29,4 @@ const PostRecommends = () => {
   );
 };
 
-export default PostRecommends;
+export default PostFollowings;

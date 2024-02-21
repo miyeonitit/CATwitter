@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode, useContext } from "react";
 
 export const TabContext = createContext({
   tab: "foryou",
@@ -19,3 +19,16 @@ const TabProvider = ({ children }: Props) => {
 };
 
 export default TabProvider;
+
+export const useTab = (): {
+  tab: string;
+  setTab: (value: "foryou" | "following") => void;
+} => {
+  const context = useContext(TabContext);
+
+  if (!TabContext) {
+    throw new Error("tab context error");
+  }
+
+  return context;
+};

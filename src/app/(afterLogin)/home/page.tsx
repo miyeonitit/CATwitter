@@ -7,9 +7,9 @@ import {
 import { getPostRecommends } from "./_lib/getPostRecommends";
 
 import Tab from "../_components/tab/Tab";
+import TabDecider from "./_component/TabDecider";
 import TabProvider from "../_components/tab/provider/TabProvider";
 import TweetPostInput from "../_components/feed/tweetPostInput/TweetPostInput";
-import PostRecommends from "./_component/PostRecommends";
 
 import styles from "./Home.module.css";
 
@@ -31,7 +31,7 @@ const FeedPage = async () => {
 
           <TweetPostInput />
 
-          <PostRecommends />
+          <TabDecider />
         </TabProvider>
       </div>
     </HydrationBoundary>

@@ -425,4 +425,58 @@ export const handlers = [
       },
     ]);
   }),
+
+  http.get("/api/followingPosts", ({ request }) => {
+    const url = new URL(request.url);
+    const cursor = parseInt(url.searchParams.get("cursor") as string) || 0;
+    return HttpResponse.json([
+      {
+        postId: cursor + 1,
+        User: User[0],
+        content: `고양이가 세상을 구한다`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+      {
+        postId: cursor + 2,
+        User: User[1],
+        content: `고양이 vs 강쥐 .. 어떤 것을 택하시겠습니까`,
+        Images: [
+          { imageId: 1, link: faker.image.urlLoremFlickr() },
+          { imageId: 2, link: faker.image.urlLoremFlickr() },
+        ],
+        createdAt: generateDate(),
+      },
+      {
+        postId: cursor + 3,
+        User: User[2],
+        content: `세상의 모든 고양이 행복해야해애애애액`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+      {
+        postId: cursor + 4,
+        User: User[3],
+        content: `인간저리가. 냥이이리와.`,
+        Images: [
+          { imageId: 1, link: faker.image.urlLoremFlickr() },
+          { imageId: 2, link: faker.image.urlLoremFlickr() },
+          { imageId: 3, link: faker.image.urlLoremFlickr() },
+          { imageId: 4, link: faker.image.urlLoremFlickr() },
+        ],
+        createdAt: generateDate(),
+      },
+      {
+        postId: cursor + 5,
+        User: User[4],
+        content: `판다가 큰 고양이라네요 ㅎㅎ`,
+        Images: [
+          { imageId: 1, link: faker.image.urlLoremFlickr() },
+          { imageId: 2, link: faker.image.urlLoremFlickr() },
+          { imageId: 3, link: faker.image.urlLoremFlickr() },
+        ],
+        createdAt: generateDate(),
+      },
+    ]);
+  }),
 ];

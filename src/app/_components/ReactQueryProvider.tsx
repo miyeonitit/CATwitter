@@ -14,6 +14,7 @@ const ReactQueryProvider = ({ children }: Props) => {
   const [client] = useState(
     new QueryClient({
       defaultOptions: {
+        // react-query 전역 설정
         queries: {
           refetchOnWindowFocus: false, // 윈도우가 포커스를 얻을 때마다 쿼리를 다시 불러오지 않도록 지정
           retryOnMount: true, // 컴포넌트가 마운트될 때 쿼리를 다시 시도하도록 지정

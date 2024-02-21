@@ -56,19 +56,20 @@ const TweetContents: React.FC<TweetContentsProps> = ({
 
         <div>
           <div className={styles.feed_contents_text}>{post.content}</div>
-          {post.Images.map((image) => (
-            <span key={image.imageId}>
-              <Link href={`/miyeon/status/14/photo/55`}>
-                <div className={styles.feed_contents_image_box}>
-                  <img
-                    src={image.link}
-                    className={styles.feed_contents_image}
-                    alt="contents_image"
-                  />
-                </div>
-              </Link>
-            </span>
-          ))}
+          {post.Images.length &&
+            post.Images.map((image) => (
+              <span key={image.imageId}>
+                <Link href={`/miyeon/status/14/photo/55`}>
+                  <div className={styles.feed_contents_image_box}>
+                    <img
+                      src={image.link}
+                      className={styles.feed_contents_image}
+                      alt="contents_image"
+                    />
+                  </div>
+                </Link>
+              </span>
+            ))}
         </div>
 
         <div className={styles.feed_contents_footer}>
