@@ -9,14 +9,12 @@ const ProfilePage = () => {
   return (
     <main className={styles.profile_image_wrapper}>
       <ProfileHeader />
-
       <UserInfomationBox />
-
       <FollowerBox />
-
+      gdgd
+      {/* <TweetContents />
       <TweetContents />
-      <TweetContents />
-      <TweetContents />
+      <TweetContents /> */}
     </main>
   );
 };
