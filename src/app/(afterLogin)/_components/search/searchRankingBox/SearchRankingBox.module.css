@@ -10,10 +10,6 @@
   line-height: 24px;
 }
 
-.search_ranking_box_contents {
+.trending_tag {
   padding: 14px;
-}
-
-.search_ranking_box_contents:hover {
-  background-color: #eaeaea;
 }

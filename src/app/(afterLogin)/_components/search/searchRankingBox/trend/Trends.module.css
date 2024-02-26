@@ -1,3 +1,11 @@
+.trending_box {
+  padding: 14px;
+}
+
+.trending_box:hover {
+  background-color: #eaeaea;
+}
+
 .trending_tag {
   font-size: 12px;
   font-weight: 400;

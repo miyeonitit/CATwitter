@@ -520,4 +520,18 @@ export const handlers = [
       },
     ]);
   }),
+
+  http.get("/api/trends", ({ request }) => {
+    return HttpResponse.json([
+      { tagId: 1, title: "버찌", count: 4124151 },
+      { tagId: 2, title: "버터", count: 1242144 },
+      { tagId: 3, title: "애기", count: 6436243 },
+      { tagId: 4, title: "꼬미", count: 3453455 },
+      { tagId: 5, title: "깨비", count: 7452422 },
+      { tagId: 6, title: "누구세요냥", count: 2342434 },
+      { tagId: 7, title: "고성방가냥", count: 142124 },
+      { tagId: 8, title: "이쁜이", count: 14412 },
+      { tagId: 9, title: "대장이", count: 111 },
+    ]);
+  }),
 ];
