@@ -10,13 +10,13 @@ const SearchFilter = () => {
 
   const onChangeAll = (): void => {
     const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.delete("f");
+    newSearchParams.delete("filter");
     router.replace(`/search?${newSearchParams.toString()}`);
   };
 
   const onChangeFollow = (): void => {
     const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.set("f", "on");
+    newSearchParams.set("filter", "on");
     router.replace(`/search?${newSearchParams.toString()}`);
   };
 
