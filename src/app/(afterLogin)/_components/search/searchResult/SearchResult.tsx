@@ -9,15 +9,15 @@ import TweetContents from "../../feed/tweetContents/TweetContents";
 import FetchingDataLoading from "../../loading/FetchingDataLoading";
 
 type Props = {
-  query: string;
+  query: string | null;
   filter?: string;
 };
 
 const SearchResult = ({ query }: Props) => {
   const { status, data, error } = useQuery<
-    IPost[],
+    PostType[],
     Object,
-    IPost[],
+    PostType[],
     [_1: string, _2: string, Props["query"]]
   >({
     queryKey: ["posts", "search", query],
@@ -25,8 +25,6 @@ const SearchResult = ({ query }: Props) => {
     staleTime: 60000, // n초(1분 - ms) 뒤에 상태 변경 fresh -> stale
     gcTime: 500000,
   });
-
-  console.log(query, "query");
 
   return data ? (
     data?.map((post: PostType) => (

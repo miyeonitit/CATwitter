@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Tab from "../_components/tab/Tab";
 import BackButton from "../_components/button/backButton/BackButton";
 import SearchBar from "../_components/search/searchBar/SearchBar";
-import SearchResult from "../_components/search/searchResult/searchResult";
+import SearchResult from "../_components/search/searchResult/SearchResult";
 
 import styles from "./SearchDetailPage.module.css";
 
