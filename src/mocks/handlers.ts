@@ -534,4 +534,8 @@ export const handlers = [
       { tagId: 9, title: "대장이", count: 111 },
     ]);
   }),
+
+  http.get("/api/followRecommends", ({ request }) => {
+    return HttpResponse.json(User);
+  }),
 ];

@@ -50,11 +50,10 @@ const Form: React.FC<FormProps> & FromChildProps = (props) => {
     setPassword,
   };
 
-  const postFormData = (event: FormEvent<HTMLFormElement>) => {
+  const postFormData = (event: FormEvent<HTMLFormElement>): void => {
     if (!email || !password) {
       alert("아이디나 비밀번호를 확인해 주세요.");
     } else {
-      console.log(typeof event, event);
       props.action(event);
     }
   };

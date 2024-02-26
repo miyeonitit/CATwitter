@@ -1,52 +1,37 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useQuery } from "@tanstack/react-query";
+
+import UserType from "@/interfaces/UserType";
+import { getSearchFollowers } from "../../search/_lib/getSearchFollowers";
 
 import styles from "./FollowerBox.module.css";
 
-import profileImage from "../../../../../public/profile_image.png";
+import Follower from "./Follower/Follower";
 
 const FollowerBox = () => {
-  const router = useRouter();
-  const { data } = useSession();
+  const { data: session } = useSession();
 
-  const handleUserFollow = () => {
-    if (!data) {
-      router.replace("/login");
-    }
-  };
+  const { data } = useQuery<UserType[]>({
+    queryKey: ["followers"],
+    queryFn: getSearchFollowers,
+    staleTime: 60000,
+    gcTime: 300000,
+    enabled: !!session?.user,
+  });
 
   return (
     <div className={styles.follower_box_wrapper}>
       <div className={styles.follower_box_title}>Who to follow</div>
 
-      <div className={styles.follower_box_contents}>
-        <div className={styles.follower_infomation}>
-          <div className={styles.follower_profile_image_box}>
-            <Image
-              src={profileImage}
-              alt="profile_image"
-              width={40}
-              height={40}
-            />
-          </div>
-          <div>
-            <div className={styles.follower_words}>버터냥</div>
-            <div className={styles.follower_tag}>@butter_nyang</div>
-          </div>
-        </div>
-
-        <div className={styles.follow_button_box}>
-          <button
-            className={styles.follow_button}
-            onClick={() => handleUserFollow()}
-          >
-            Follow
-          </button>
-        </div>
-      </div>
+      {data?.map((follower: UserType) => (
+        <Follower
+          key={follower.id}
+          follower={follower}
+          session={session?.user}
+        />
+      ))}
     </div>
   );
 };
