@@ -6,6 +6,8 @@ import styles from "./SearchRankingBox.module.css";
 const SearchRankingBox = () => {
   const { data } = useSession();
 
+  console.log(data, "data");
+
   return (
     <div className={styles.search_ranking_box_wrapper}>
       <div className={styles.search_ranking_box_title}>Trends for you</div>
