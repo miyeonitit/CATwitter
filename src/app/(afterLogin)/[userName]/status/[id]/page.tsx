@@ -8,7 +8,7 @@ const UserTweetPostPage = () => {
     <div className={styles.user_tweet_post_page_wrapper}>
       <ProfileHeader />
 
-      <TweetDetails />
+      {/* <TweetDetails /> */}
     </div>
   );
 };

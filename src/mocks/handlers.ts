@@ -1,6 +1,9 @@
 import { http, HttpResponse, StrictResponse } from "msw";
 import { faker } from "@faker-js/faker";
 
+import UserType from "@/interfaces/UserType";
+import { removeAtEmail } from "@/app/utils/removeAtEmail";
+
 const generateDate = () => {
   const lastWeek = new Date(Date.now());
 
@@ -14,33 +17,33 @@ const generateDate = () => {
 
 const Posts = [];
 
-const User = [
+const User: UserType[] = [
   {
-    id: 11,
+    id: "11",
     email: "catmom@test.com",
     name: "cat_lover",
     image: faker.image.avatar(),
   },
   {
-    id: 22,
+    id: "22",
     email: "yeony@test.com",
     name: "여니",
     image: faker.image.avatar(),
   },
   {
-    id: 33,
+    id: "33",
     email: "random@test.com",
     name: "버찌짱",
     image: faker.image.avatar(),
   },
   {
-    id: 44,
+    id: "44",
     email: "ggomi1313@test.com",
     name: "꼬미",
     image: faker.image.avatar(),
   },
   {
-    id: 55,
+    id: "55",
     email: "lovely@test.com",
     name: "러비더비",
     image: faker.image.avatar(),
@@ -268,23 +271,6 @@ export const handlers = [
         createdAt: generateDate(),
       },
     ]);
-  }),
-
-  http.get("/api/users/:userId", ({ request, params }): StrictResponse<any> => {
-    const { userId } = params;
-
-    const found = User.find((v) => v.id === userId);
-
-    if (found) {
-      return HttpResponse.json(found);
-    }
-
-    return HttpResponse.json(
-      { message: "no_such_user" },
-      {
-        status: 404,
-      }
-    );
   }),
 
   http.get("/api/posts/:postId", ({ request, params }): StrictResponse<any> => {
@@ -537,5 +523,65 @@ export const handlers = [
 
   http.get("/api/followRecommends", ({ request }) => {
     return HttpResponse.json(User);
+  }),
+
+  http.get("/api/users/:userId/posts", ({ request, params }) => {
+    const { userId } = params;
+    return HttpResponse.json([
+      {
+        postId: 1,
+        User: User[0],
+        content: `${1} ${userId}의 게시글`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+      {
+        postId: 2,
+        User: User[0],
+        content: `${2} ${userId}의 게시글`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+      {
+        postId: 3,
+        User: User[0],
+        content: `${3} ${userId}의 게시글`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+      {
+        postId: 4,
+        User: User[0],
+        content: `${4} ${userId}의 게시글`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+      {
+        postId: 5,
+        User: User[0],
+        content: `${5} ${userId}의 게시글`,
+        Images: [{ imageId: 1, link: faker.image.urlLoremFlickr() }],
+        createdAt: generateDate(),
+      },
+    ]);
+  }),
+
+  http.get("/api/users/:userId", ({ request, params }): StrictResponse<any> => {
+    const { userId } = params;
+
+    const found = User.find((v: UserType) => removeAtEmail(v.email) === userId);
+
+    console.log(found, "found");
+
+    if (found) {
+      return HttpResponse.json(found);
+    }
+
+    return HttpResponse.json(
+      { message: "no_such_user" },
+      {
+        status: 404,
+      }
+    );
   }),
 ];

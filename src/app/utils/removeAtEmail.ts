@@ -1,3 +1,3 @@
 export const removeAtEmail = (email: string): string => {
-  return email.split("@")[0];
+  return email?.split("@")[0];
 };

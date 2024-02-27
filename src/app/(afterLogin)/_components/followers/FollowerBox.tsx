@@ -10,7 +10,7 @@ import styles from "./FollowerBox.module.css";
 
 import Follower from "./Follower/Follower";
 
-const FollowerBox = () => {
+const FollowerBox = ({ userName }: { userName: string }) => {
   const { data: session } = useSession();
 
   const { data } = useQuery<UserType[]>({

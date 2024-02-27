@@ -5,13 +5,14 @@ import TweetContents from "../_components/feed/tweetContents/TweetContents";
 
 import styles from "./ProfilePage.module.css";
 
-const ProfilePage = () => {
+const ProfilePage = async () => {
   return (
     <main className={styles.profile_image_wrapper}>
       <ProfileHeader />
+
       <UserInfomationBox />
       <FollowerBox />
-      gdgd
+
       {/* <TweetContents />
       <TweetContents />
       <TweetContents /> */}
