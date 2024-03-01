@@ -1,5 +1,5 @@
 // user
-export default interface FormType {
+export default interface UserType {
   id: string;
   name: string;
   email: string;

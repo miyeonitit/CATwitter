@@ -1,25 +1,40 @@
-import type { NextRequest, NextResponse } from "next/server";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
+
+import { getPostRecommends } from "./_lib/getPostRecommends";
 
 import Tab from "../_components/tab/Tab";
+import TabDecider from "./_component/TabDecider";
 import TabProvider from "../_components/tab/provider/TabProvider";
-import TweetContents from "../_components/feed/tweetContents/TweetContents";
 import TweetPostInput from "../_components/feed/tweetPostInput/TweetPostInput";
 
 import styles from "./Home.module.css";
 
-const FeedPage = async (req: NextRequest, res: NextResponse) => {
+const FeedPage = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["posts", "recommends"],
+    queryFn: getPostRecommends,
+  });
+
+  const dehydratedState = dehydrate(queryClient);
+
   return (
-    <div className={styles.feed_page_wrapper}>
-      <TabProvider>
-        <Tab leftTab="For you" rightTab="Following" />
+    <HydrationBoundary state={dehydratedState}>
+      <div className={styles.feed_page_wrapper}>
+        <TabProvider>
+          <Tab leftTab="For you" rightTab="Following" />
 
-        <TweetPostInput />
+          <TweetPostInput />
 
-        <TweetContents />
-        <TweetContents />
-        <TweetContents />
-      </TabProvider>
-    </div>
+          <TabDecider />
+        </TabProvider>
+      </div>
+    </HydrationBoundary>
   );
 };
 

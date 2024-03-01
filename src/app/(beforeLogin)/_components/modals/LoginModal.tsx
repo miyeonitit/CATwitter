@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEventHandler } from "react";
+import { FormEvent, FormEventHandler } from "react";
 import { useFormStatus } from "react-dom";
 import { signIn } from "next-auth/react";
 
@@ -12,13 +12,16 @@ const LoginModal = () => {
   const router = useRouter();
   const { pending } = useFormStatus();
 
-  const LoginPost: FormEventHandler<HTMLFormElement> = async (
-    body: FormData
-  ) => {
+  const LoginPost: FormEventHandler<HTMLFormElement> = async (event) => {
     try {
+      event.preventDefault();
+
+      const formEmailValue = event.currentTarget.email.value;
+      const formPasswordValue = event.currentTarget.password.value;
+
       const loginSuccess = await signIn("credentials", {
-        username: body.email,
-        password: body.password,
+        username: formEmailValue,
+        password: formPasswordValue,
         redirect: false,
       });
 
